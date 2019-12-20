@@ -3,22 +3,22 @@ import T from 'prop-types';
 
 const Statisctic = ({ label, value, percent }) => {
   return (
-    <span>
-      {label}: {value} {percent && <>{percent}</>}
-    </span>
+    <li>
+      {label}: {value} {percent && <span>%</span>}
+    </li>
   );
 };
 
 Statisctic.defaultProps = {
   label: 'error',
   value: 0,
-  percent: '',
+  percent: false,
 };
 
 Statisctic.propTypes = {
   label: T.string,
   value: T.number,
-  percent: T.string,
+  percent: T.bool,
 };
 
 export default Statisctic;
